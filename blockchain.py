@@ -158,9 +158,8 @@ class Blockchain(object):
             i.print_block()
             k = k + 1
         print("\n")
-
-
-#теперь консенсус(прохожу по всем нодам, чекаю ноду с максимальной цепочкой блоков, меняю блокчейны у всех челов, меняю сам блокчейн).-- в целом очев
+        
+       
 
 
 app = Flask(__name__)
@@ -176,13 +175,13 @@ blockchain.add_transaction([t1,t2], 2)
 
 blockchain.mine_block()
 
-blockchain.add_transaction([t1,t2, Transaction("ISLAM", "aas", 1000000000)], 3)
+blockchain.add_transaction([t1,t2, Transaction("ISLAM", "a", 1000000000)], 3)
 
 blockchain.mine_block()
 
 blockchain.mine_block()
 
-blockchain.add_transaction([t1,t2, Transaction("ISLAM", "asdfas", 1000000000), Transaction("ISLAM", "asdf", 1000000000)], 4)
+blockchain.add_transaction([t1,t2, Transaction("ISLAM", "b", 1000000000), Transaction("ISLAM", "c", 1000000000)], 4)
 
 
 def new_blockchain(blocks, transactions):
