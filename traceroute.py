@@ -23,10 +23,10 @@ def traceroute(destination, ttl=64, timeout=5, num_of_req=3):
                 # Create an ICMP echo request
                 icmp_echo_request = ICMPRequest(destination_ip[0], id=iter, sequence=iter, ttl=curr_iter)
 
-                # Sending request
+                # Send request
                 socket.send(icmp_echo_request)
 
-                # Getting reply
+                # Get reply
                 reply = socket.receive(icmp_echo_request, timeout=timeout)
                 curr_ip = reply.source
                 round_trip_time = (reply.time - icmp_echo_request.time) * 1000
